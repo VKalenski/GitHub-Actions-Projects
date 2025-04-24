@@ -6,3 +6,5 @@ on:
 jobs:
   build:
     uses: VKalenski/GitHub-Actions-Templates/.github/workflows/build-dot-net.yaml@main
+    with:
+      project-name: ./src/Project-DotNet-9
