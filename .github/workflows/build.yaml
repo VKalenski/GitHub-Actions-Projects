@@ -1,0 +1,8 @@
+name: Build .NET Project
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: GitHub-Actions-Templates/.github/workflows/build-dot-net.yaml@main
