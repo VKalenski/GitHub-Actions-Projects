@@ -5,4 +5,4 @@ on:
 
 jobs:
   build:
-    uses: GitHub-Actions-Templates/.github/workflows/build-dot-net.yaml@main
+    uses: VKalenski/GitHub-Actions-Templates/.github/workflows/build-dot-net.yaml@main
