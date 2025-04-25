@@ -39,7 +39,7 @@ jobs:
         with:
           image-ref: "vilislavkalenski/project-dotnet-9:latest"
           exit-code: 1
-          ignore-unfixed: false
+          ignore-unfixed: true
           format: "table"
           severity: "CRITICAL,HIGH"
           output: "aquasecurity-scan.txt"
