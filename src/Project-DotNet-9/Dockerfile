@@ -28,7 +28,7 @@ FROM base AS final
 WORKDIR /app
 
 # Update perl-base package to fix vulnerabilities
-RUN apt-get update && apt-get upgrade -y perl-base
+RUN apt-get update && apt-get install -y perl-base && apt-get upgrade -y perl-base
 
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Project-DotNet-9.dll"]
