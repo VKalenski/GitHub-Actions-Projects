@@ -9,9 +9,3 @@ jobs:
     with:
       project-name: './src/Project-DotNet-9'
       dotnet-version: '9.0.x'
-
-  notify:
-    needs: build
-    uses: VKalenski/GitHub-Actions-Templates/.github/workflows/notifications.yaml@main
-    secrets:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
