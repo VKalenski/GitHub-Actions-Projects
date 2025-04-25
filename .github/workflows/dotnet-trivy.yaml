@@ -39,11 +39,14 @@ jobs:
         with:
           image-ref: "vilislavkalenski/project-dotnet-9:latest"
           exit-code: 1
-          ignore-unfixed: true
+          ignore-unfixed: false
+          format: "table"
           severity: "CRITICAL,HIGH"
+          output: "aquasecurity-scan.txt"
 
-      - name: Upload Trivy report
+      - name: Temporarily save Trivy results
         uses: actions/upload-artifact@v4
         with:
-          name: trivy-report
-          path: trivy-report.json
+          name: "aquasecurity-scan"
+          path: "./aquasecurity-scan-*.txt"
+          retention-days: 1
