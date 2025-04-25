@@ -13,3 +13,5 @@ jobs:
   notify:
     needs: build
     uses: VKalenski/GitHub-Actions-Templates/.github/workflows/notifications.yaml@main
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
