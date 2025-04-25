@@ -27,8 +27,14 @@ RUN dotnet publish "./Project-DotNet-9.csproj" -c $BUILD_CONFIGURATION -o /app/p
 FROM base AS final
 WORKDIR /app
 
-# Update perl-base package to fix vulnerabilities
+# Switch to root to update and install packages
+USER root
+
+# Update apt-get, install perl-base and fix vulnerabilities
 RUN apt-get update && apt-get install -y perl-base && apt-get upgrade -y perl-base
+
+# Switch back to the non-root user
+USER $APP_UID
 
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Project-DotNet-9.dll"]
