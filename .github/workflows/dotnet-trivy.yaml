@@ -1,0 +1,48 @@
+name: Build and Security Scan with Trivy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Docker image
+        run: |
+          docker build -t vilislavkalenski/project-dotnet-9:latest ./src/Project-DotNet-9
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push vilislavkalenski/project-dotnet-9:latest
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.30.0
+        with:
+          image-ref: "vilislavkalenski/project-dotnet-9:latest"
+          exit-code: 1
+          ignore-unfixed: true
+          severity: "CRITICAL,HIGH"
+
+      - name: Upload Trivy report
+        uses: actions/upload-artifact@v2
+        with:
+          name: trivy-report
+          path: trivy-report.json
