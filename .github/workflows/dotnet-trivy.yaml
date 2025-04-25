@@ -41,7 +41,7 @@ jobs:
           exit-code: 1
           ignore-unfixed: true
           format: "table"
-          severity: "CRITICAL,HIGH"
+          severity: "CRITICAL,HIGH,MEDIUM,LOW"
           output: "aquasecurity-scan.txt"
 
       - name: Temporarily save Trivy results
