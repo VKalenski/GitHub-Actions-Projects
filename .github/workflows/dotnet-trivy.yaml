@@ -48,5 +48,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: "aquasecurity-scan"
-          path: "./aquasecurity-scan-*.txt"
+          path: "./aquasecurity-scan.txt"
           retention-days: 1
