@@ -26,5 +26,9 @@ RUN dotnet publish "./Project-DotNet-9.csproj" -c $BUILD_CONFIGURATION -o /app/p
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
+
+# Update perl-base package to fix vulnerabilities
+RUN apt-get update && apt-get upgrade -y perl-base
+
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Project-DotNet-9.dll"]
