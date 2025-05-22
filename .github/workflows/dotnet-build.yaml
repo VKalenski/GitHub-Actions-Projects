@@ -3,9 +3,19 @@ name: Build .NET Project
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  build:
-    uses: VKalenski/GitHub-Actions-Templates/.github/workflows/dotnet-build.yaml@main
-    with:
-      project-name: './src/Project-DotNet-9'
-      dotnet-version: '9.0.x'
+  tag-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Auto-increment and tag
+        uses: VKalenski/GitHub-Actions-Templates/.github/actions/tag-version@main
+
+      - name: Build project
+        uses: VKalenski/GitHub-Actions-Templates/.github/workflows/dotnet-build.yaml@main
+        with:
+          project-name: './src/Project-DotNet-9'
+          dotnet-version: '9.0.x'
