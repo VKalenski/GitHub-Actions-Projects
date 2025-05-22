@@ -7,15 +7,12 @@ permissions:
   contents: write
 
 jobs:
-  tag-and-build:
-    runs-on: ubuntu-latest
+  tag-version:
+    uses: VKalenski/GitHub-Actions-Templates/.github/actions/tag-version@main
 
-    steps:
-      - name: Auto-increment and tag
-        uses: VKalenski/GitHub-Actions-Templates/.github/actions/tag-version@main
-
-      - name: Build project
-        uses: VKalenski/GitHub-Actions-Templates/.github/workflows/dotnet-build.yaml@main
-        with:
-          project-name: './src/Project-DotNet-9'
-          dotnet-version: '9.0.x'
+  build:
+    needs: tag-version
+    uses: VKalenski/GitHub-Actions-Templates/.github/workflows/dotnet-build.yaml@main
+    with:
+      project-name: './src/Project-DotNet-9'
+      dotnet-version: '9.0.x'
