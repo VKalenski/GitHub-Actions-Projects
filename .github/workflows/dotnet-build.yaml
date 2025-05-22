@@ -8,7 +8,11 @@ permissions:
 
 jobs:
   tag-version:
-    uses: VKalenski/GitHub-Actions-Templates/.github/actions/tag-version@main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag version
+        uses: VKalenski/GitHub-Actions-Templates/.github/actions/tag-version@main
 
   build:
     needs: tag-version
