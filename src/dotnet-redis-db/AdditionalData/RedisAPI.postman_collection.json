@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "a35c465e-f6e1-4043-b417-262c8db920d0",
+		"name": "RedisAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19402395",
+		"_collection_link": "https://dark-crater-965234.postman.co/workspace/New-Team-Workspace~5944731c-edbf-4b38-a9bf-22c9746500bc/collection/19402395-a35c465e-f6e1-4043-b417-262c8db920d0?action=share&source=collection_link&creator=19402395"
+	},
+	"item": [
+		{
+			"name": "Get Platforms By Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Tests\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is within an acceptable range\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// https://localhost:7076/api/Platforms/1",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7076/api/Platforms/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7076",
+					"path": [
+						"api",
+						"Platforms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Platforms",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Tests\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is within an acceptable range\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7076/api/Platforms/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7076",
+					"path": [
+						"api",
+						"Platforms",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Platform",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Tests\r",
+							"\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is within an acceptable range\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"'Azure\"\r\n}\r\n\r\n\r\n// Test Data\r\n\r\n//{\r\n//    \"name\": \"'Redis\"\r\n//}\r\n\r\n// ---\r\n\r\n//{\r\n//    \"name\": \"'pgAdmin\"\r\n//}\r\n\r\n// ---\r\n\r\n//{\r\n//    \"name\": \"'MariaDb\"\r\n//}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7076/api/Platforms/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7076",
+					"path": [
+						"api",
+						"Platforms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
