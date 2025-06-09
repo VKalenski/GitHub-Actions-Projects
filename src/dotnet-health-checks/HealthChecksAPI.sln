@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthChecksAPI", "HealthChecksAPI\HealthChecksAPI.csproj", "{E203F775-E386-4E19-8990-BED7EF70E181}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC3521AB-8DA3-4AFF-9635-287F24B67868}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E203F775-E386-4E19-8990-BED7EF70E181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E203F775-E386-4E19-8990-BED7EF70E181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E203F775-E386-4E19-8990-BED7EF70E181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E203F775-E386-4E19-8990-BED7EF70E181}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8AB78EB-92C9-40E7-882F-E741D8F442F5}
+	EndGlobalSection
+EndGlobal
